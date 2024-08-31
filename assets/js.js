@@ -115,3 +115,23 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive)
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.description-toggle').forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault(); // Empêche le comportement par défaut du bouton
+            const container = this.closest('.details-container');
+            const descriptionBox = container.querySelector('.description-box');
+
+            // Ferme toutes les autres descriptions ouvertes
+            document.querySelectorAll('.description-box.active').forEach(box => {
+                if (box !== descriptionBox) {
+                    box.classList.remove('active');
+                }
+            });
+
+            // Bascule l'état de la description actuelle
+            descriptionBox.classList.toggle('active');
+        });
+    });
+});

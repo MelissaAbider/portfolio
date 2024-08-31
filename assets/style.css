@@ -419,13 +419,15 @@ h3 {
     flex: 1 1 calc(33.333% - 20px);
     /* S'adapte à 3 colonnes avec l'espace de 20px */
     box-sizing: border-box;
-    padding: 1.5rem;
+    padding: 2rem;
     background: white;
     border-radius: 2rem;
     border: 0.1rem solid rgb(53, 53, 53);
     border-color: rgb(163, 163, 163);
     text-align: center;
     margin: 10px;
+    max-width: 85%;
+
 }
 
 /* Image du projet */
@@ -449,10 +451,9 @@ h3 {
 }
 
 .about-containers {
-    gap: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 /* Styles pour petits écrans */
@@ -729,12 +730,45 @@ footer {
     }
 
     .details-container {
-        width: 80%;
+        max-width: 80%;
+        /* Limitez la largeur maximale */
+        margin: auto;
+        /* Centrez le conteneur */
     }
 
 }
 
+.description-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.description-box.active {
+    display: block;
+}
+
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
+
+@media (max-width: 1200px) {
+    .about-containers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-containers {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media only screen and (max-width: 540px) {
     .featured-name {
@@ -755,5 +789,10 @@ footer {
 
     .experience-details-container {
         margin-top: 2rem;
+    }
+
+    .description-box {
+        position: static;
+        margin-top: 15px;
     }
 }
