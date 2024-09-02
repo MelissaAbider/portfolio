@@ -46,7 +46,7 @@ const sr = ScrollReveal({
     origin: 'top',
     distance: '80px',
     duration: 2000,
-    reset: true
+    reset: false
 })
 
 /* -- HOME -- */
@@ -71,7 +71,7 @@ const srLeft = ScrollReveal({
     origin: 'left',
     distance: '80px',
     duration: 2000,
-    reset: true
+    reset: false
 })
 
 srLeft.reveal('.about-info', { delay: 100 })
@@ -82,7 +82,7 @@ const srRight = ScrollReveal({
     origin: 'right',
     distance: '80px',
     duration: 2000,
-    reset: true
+    reset: false
 })
 
 srRight.reveal('.skills-box', { delay: 100 })
@@ -117,21 +117,38 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive)
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.description-toggle').forEach(button => {
-        button.addEventListener('click', function (e) {
-            e.preventDefault(); // Empêche le comportement par défaut du bouton
+    const descriptionButtons = document.querySelectorAll('.description-toggle');
+    let activeDescriptionBox = null; // Pour garder une trace de la description actuellement ouverte
+
+    descriptionButtons.forEach(button => {
+        button.addEventListener('click', function () {
             const container = this.closest('.details-container');
             const descriptionBox = container.querySelector('.description-box');
 
-            // Ferme toutes les autres descriptions ouvertes
-            document.querySelectorAll('.description-box.active').forEach(box => {
-                if (box !== descriptionBox) {
-                    box.classList.remove('active');
-                }
-            });
+            // Si une description est déjà ouverte et que ce n'est pas celle qu'on vient de cliquer
+            if (activeDescriptionBox && activeDescriptionBox !== descriptionBox) {
+                // Ferme la description active précédente
+                activeDescriptionBox.classList.remove('active');
+                activeDescriptionBox.style.maxHeight = '0';
+                activeDescriptionBox.closest('.details-container').classList.remove('expanded');
+            }
 
             // Bascule l'état de la description actuelle
+            const isOpening = !descriptionBox.classList.contains('active');
             descriptionBox.classList.toggle('active');
+            container.classList.toggle('expanded');
+
+            // Ajuste la hauteur si nécessaire
+            if (isOpening) {
+                descriptionBox.style.maxHeight = descriptionBox.scrollHeight + 'px';
+                activeDescriptionBox = descriptionBox; // Met à jour la description active
+            } else {
+                descriptionBox.style.maxHeight = '0';
+                activeDescriptionBox = null; // Aucune description active
+            }
         });
     });
 });
+
+
+

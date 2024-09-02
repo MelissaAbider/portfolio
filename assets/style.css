@@ -81,6 +81,7 @@ i {
 /* ------- BASE -------- */
 body {
     background: var(--body-color);
+    overflow-x: hidden;
 }
 
 .container {
@@ -323,7 +324,8 @@ nav {
 
 .col {
     display: flex;
-    width: 50%;
+    width: 80%;
+
 }
 
 /* -- ## --- RESUABLE CSS -- ## -- */
@@ -362,12 +364,21 @@ h3 {
     background: var(--color-white);
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     border-radius: 20px;
+
 }
 
 .about-info p {
     text-align: center;
     font-size: 15px;
     color: #777;
+}
+
+.competences {
+    width: 30rem;
+}
+
+.competence_col {
+    margin-left: 0.5rem;
 }
 
 .about-btn button {
@@ -416,18 +427,15 @@ h3 {
 
 /* Style pour chaque projet */
 .details-container {
-    flex: 1 1 calc(33.333% - 20px);
-    /* S'adapte à 3 colonnes avec l'espace de 20px */
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     padding: 2rem;
     background: white;
     border-radius: 2rem;
-    border: 0.1rem solid rgb(53, 53, 53);
-    border-color: rgb(163, 163, 163);
+    border: 0.1rem solid rgb(163, 163, 163);
     text-align: center;
     margin: 10px;
-    max-width: 85%;
-
 }
 
 /* Image du projet */
@@ -456,29 +464,28 @@ h3 {
     gap: 1rem;
 }
 
-/* Styles pour petits écrans */
-@media (max-width: 768px) {
-    .details-container {
-        flex: 1 1 calc(50% - 20px);
-
-    }
-
-    .about-containers {
-        flex-wrap: wrap;
-    }
+.competence-list {
+    max-height: 100px;
+    /* Bordure pour délimiter la zone */
+    padding: 10px;
+    /* Espacement intérieur */
+    margin-bottom: 20px;
+    /* Espacement entre les sections */
 }
 
-/* Styles pour très petits écrans */
-@media (max-width: 480px) {
-    .details-container {
-        flex: 1 1 100%;
-        /* S'adapte à 1 colonne */
-    }
-
-    .about-containers {
-        flex-wrap: wrap;
-    }
+#p_ia {
+    color: black;
+    text-align: left;
 }
+
+#titre_experience {
+    color: #0ca0c9;
+    font-size: 18px;
+    font-style: normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+}
+
 
 /* ----- competences BOX ----- */
 
@@ -626,6 +633,57 @@ footer {
     margin-top: 10px;
 }
 
+.col_exp {
+    margin-left: 20px;
+}
+
+.row_exp {
+    margin-left: 7rem;
+}
+
+.description-box {
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.description-box.active {
+    opacity: 1;
+}
+
+.details-container.expanded {
+    grid-row-end: span 2;
+}
+
+.descpition_p {
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+span {
+    font-weight: 300px;
+    font-style: italic;
+    color: #777;
+}
+
+
+
+ul {
+    margin-left: 20px;
+}
+
+.about-containers .details-container.color-container h3+ul {
+    list-style-type: none;
+    /* Supprime les points de la liste */
+    padding-left: 0;
+    /* Supprime le padding à gauche */
+    margin: 0;
+    /* Supprime la marge par défaut */
+
+}
+
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px) {
@@ -641,7 +699,8 @@ footer {
 }
 
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
-@media only screen and (max-width: 900px) {
+@media (min-width: 320px) and (max-width: 767px) {
+
     .nav-button {
         display: none;
     }
@@ -712,12 +771,18 @@ footer {
         flex-direction: column;
         justify-content: center;
         gap: 50px;
+
+    }
+
+    .row_exp {
+        margin: 0;
     }
 
     .col {
         display: flex;
         justify-content: center;
         width: 100%;
+
     }
 
     .about-info,
@@ -736,29 +801,17 @@ footer {
         /* Centrez le conteneur */
     }
 
-}
+    footer {
+        display: none;
+        /* Masque le footer sur les appareils mobiles */
+    }
 
-.description-box {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #f0f0f0;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.description-box.active {
-    display: block;
 }
 
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
-@media (max-width: 1200px) {
+/* Pour les tablettes (768px à 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
     .about-containers {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -794,5 +847,9 @@ footer {
     .description-box {
         position: static;
         margin-top: 15px;
+    }
+
+    .row_exp {
+        margin: 0;
     }
 }
