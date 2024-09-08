@@ -49,7 +49,6 @@ html {
 }
 
 
-/* ---##-- REUSABLE CSS --##--- */
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn {
@@ -91,7 +90,7 @@ h2 {
     font-size: 20px;
 }
 
-/* ----- NAVIGATION BAR ----- */
+
 nav {
     position: fixed;
     display: flex;
@@ -139,6 +138,7 @@ nav {
     font-weight: 500;
     padding-inline: 15px;
     margin-inline: 20px;
+    font-size: 0.9em;
 }
 
 .nav-menu-btn {
@@ -169,12 +169,12 @@ nav {
 }
 
 
-/* ----- WRAPPER DESIGN ----- */
+
 .wrapper {
     padding-inline: 10vw;
 }
 
-/* ----- FEATURED BOX ----- */
+
 .featured-box {
     position: relative;
     display: flex;
@@ -182,7 +182,7 @@ nav {
     min-height: 700px;
 }
 
-/* ----- FEATURED TEXT BOX ----- */
+
 .featured-text {
     position: relative;
     display: flex;
@@ -255,7 +255,7 @@ nav {
     color: var(--first-color);
 }
 
-/* ----- FEATURED IMAGE BOX ----- */
+
 .featured-image {
     display: flex;
     justify-content: right;
@@ -308,7 +308,7 @@ nav {
     font-size: 20px;
 }
 
-/* ----- MAIN BOX ----- */
+
 .section {
     padding-block: 5em;
 }
@@ -326,7 +326,7 @@ nav {
 
 }
 
-/* -- ## --- RESUABLE CSS -- ## -- */
+
 .top-header {
     text-align: center;
     margin-bottom: 5em;
@@ -350,7 +350,7 @@ h3 {
     margin-bottom: 15px;
 }
 
-/* ----- ABOUT INFO ----- */
+
 .about-info {
     position: relative;
     display: flex;
@@ -392,7 +392,7 @@ h3 {
     background: var(--first-color-hover);
 }
 
-/* ----- ABOUT / SKILLS BOX ----- */
+
 .skills-box {
     margin: 10px;
 }
@@ -415,15 +415,14 @@ h3 {
     border-radius: 5px;
 }
 
-/* ----- PROJECTS BOX ----- */
-/* Container principal pour les projets */
+
 #projects .experience-details-container {
     justify-content: center;
     flex-direction: column;
     display: flex;
 }
 
-/* Style pour chaque projet */
+
 .details-container {
     display: flex;
     flex-direction: column;
@@ -436,20 +435,19 @@ h3 {
     margin: 10px;
 }
 
-/* Image du projet */
+
 .project-img {
     border-radius: 2rem;
     width: 90%;
     height: 90%;
 }
 
-/* Titre du projet */
 .project-title {
     margin: 1rem;
     color: black;
 }
 
-/* Bouton du projet */
+
 .project-btn {
     color: black;
     border-color: rgb(163, 163, 163);
@@ -464,11 +462,8 @@ h3 {
 
 .competence-list {
     max-height: 100px;
-    /* Bordure pour délimiter la zone */
     padding: 10px;
-    /* Espacement intérieur */
     margin-bottom: 20px;
-    /* Espacement entre les sections */
 }
 
 #p_ia {
@@ -485,7 +480,7 @@ h3 {
 }
 
 
-/* ----- competences BOX ----- */
+
 
 .competence {
     text-align: left;
@@ -494,7 +489,7 @@ h3 {
 
 }
 
-/* ----- CONTACT BOX ----- */
+
 .contact-info {
     position: relative;
     display: flex;
@@ -538,7 +533,7 @@ h3 {
     z-index: 2;
 }
 
-/* ----- CONTACT FORM ----- */
+
 .form-control {
     display: flex;
     flex-direction: column;
@@ -590,7 +585,6 @@ textarea {
     rotate: -45deg;
 }
 
-/* ----- FOOTER BOX ----- */
 footer {
     display: flex;
     justify-content: center;
@@ -674,11 +668,8 @@ ul {
 
 .about-containers .details-container.color-container h3+ul {
     list-style-type: none;
-    /* Supprime les points de la liste */
     padding-left: 0;
-    /* Supprime le padding à gauche */
     margin: 0;
-    /* Supprime la marge par défaut */
 
 }
 
@@ -896,9 +887,7 @@ ul {
 
     .details-container {
         max-width: 80%;
-        /* Limitez la largeur maximale */
         margin: auto;
-        /* Centrez le conteneur */
     }
 
     footer {

@@ -116,35 +116,38 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive)
 
+
+/* ----- Description Toggle Button Management with Auto-Close Functionality----- */
+
 document.addEventListener('DOMContentLoaded', function () {
     const descriptionButtons = document.querySelectorAll('.description-toggle');
-    let activeDescriptionBox = null; // Pour garder une trace de la description actuellement ouverte
+    let activeDescriptionBox = null;
 
     descriptionButtons.forEach(button => {
         button.addEventListener('click', function () {
             const container = this.closest('.details-container');
             const descriptionBox = container.querySelector('.description-box');
 
-            // Si une description est déjà ouverte et que ce n'est pas celle qu'on vient de cliquer
+
             if (activeDescriptionBox && activeDescriptionBox !== descriptionBox) {
-                // Ferme la description active précédente
+
                 activeDescriptionBox.classList.remove('active');
                 activeDescriptionBox.style.maxHeight = '0';
                 activeDescriptionBox.closest('.details-container').classList.remove('expanded');
             }
 
-            // Bascule l'état de la description actuelle
+
             const isOpening = !descriptionBox.classList.contains('active');
             descriptionBox.classList.toggle('active');
             container.classList.toggle('expanded');
 
-            // Ajuste la hauteur si nécessaire
+
             if (isOpening) {
                 descriptionBox.style.maxHeight = descriptionBox.scrollHeight + 'px';
-                activeDescriptionBox = descriptionBox; // Met à jour la description active
+                activeDescriptionBox = descriptionBox;
             } else {
                 descriptionBox.style.maxHeight = '0';
-                activeDescriptionBox = null; // Aucune description active
+                activeDescriptionBox = null;
             }
         });
     });
