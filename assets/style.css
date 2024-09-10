@@ -203,7 +203,7 @@ nav {
 }
 
 .featured-name {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 600;
     color: var(--text-color-second);
     margin-block: 20px;
@@ -215,7 +215,7 @@ nav {
 }
 
 .featured-text-info {
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 30px;
     color: var(--text-color-second);
 }
@@ -677,6 +677,7 @@ ul {
     color: #24a38e;
     text-decoration: underline;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .details-container2 {
@@ -728,13 +729,13 @@ ul {
     }
 
     .featured-name p {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
     }
 
     .typedText {
         text-transform: capitalize;
         color: #24a38e;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 
     .featured-text-info {
@@ -774,6 +775,11 @@ ul {
 
     h4 {
         font-size: 0.8rem;
+    }
+
+    .description-box span {
+        font-size: 0.7rem;
+        color: #931b9e;
     }
 
     .about-info p,
