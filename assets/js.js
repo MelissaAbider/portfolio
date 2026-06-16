@@ -1,157 +1,76 @@
-/* ----- NAVIGATION BAR FUNCTION ----- */
 function myMenuFunction() {
-    var menuBtn = document.getElementById("myNavMenu");
+    const menu = document.getElementById('myNavMenu');
+    const toggle = document.querySelector('.menu-toggle');
 
-    if (menuBtn.className === "nav-menu") {
-        menuBtn.className += " responsive";
-    } else {
-        menuBtn.className = "nav-menu";
-    }
+    menu.classList.toggle('responsive');
+    const isOpen = menu.classList.contains('responsive');
+    toggle.setAttribute('aria-expanded', String(isOpen));
 }
 
-/* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
-window.onscroll = function () { headerShadow() };
+const header = document.getElementById('header');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
 
-function headerShadow() {
-    const navHeader = document.getElementById("header");
-
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-
-        navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
-        navHeader.style.height = "70px";
-        navHeader.style.lineHeight = "70px";
-
-    } else {
-
-        navHeader.style.boxShadow = "none";
-        navHeader.style.height = "90px";
-        navHeader.style.lineHeight = "90px";
-
-    }
+function updateHeader() {
+    header.classList.toggle('scrolled', window.scrollY > 20);
 }
 
+function updateActiveLink() {
+    const currentPosition = window.scrollY + 120;
 
-/* ----- TYPING EFFECT ----- */
-var typingEffect = new Typed(".typedText", {
-    strings: ["Etudiante", "Developpeuse informatique"],
-    loop: true,
-    typeSpeed: 100,
-    backSpeed: 80,
-    backDelay: 2000
-})
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        const link = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
-
-/* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 2000,
-    reset: false
-})
-
-/* -- HOME -- */
-sr.reveal('.featured-text-card', {})
-sr.reveal('.featured-name', { delay: 100 })
-sr.reveal('.featured-text-info', { delay: 200 })
-sr.reveal('.featured-text-btn', { delay: 200 })
-sr.reveal('.social_icons', { delay: 200 })
-sr.reveal('.featured-image', { delay: 300 })
-
-
-/* -- PROJECT BOX -- */
-sr.reveal('.details-container', { interval: 200 })
-
-/* -- HEADINGS -- */
-sr.reveal('.top-header', {})
-
-/* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
-
-/* -- ABOUT INFO & CONTACT INFO -- */
-const srLeft = ScrollReveal({
-    origin: 'left',
-    distance: '80px',
-    duration: 2000,
-    reset: false
-})
-
-srLeft.reveal('.about-info', { delay: 100 })
-srLeft.reveal('.contact-info', { delay: 100 })
-
-/* -- ABOUT SKILLS & FORM BOX -- */
-const srRight = ScrollReveal({
-    origin: 'right',
-    distance: '80px',
-    duration: 2000,
-    reset: false
-})
-
-srRight.reveal('.skills-box', { delay: 100 })
-srRight.reveal('.form-control', { delay: 100 })
-
-
-
-/* ----- CHANGE ACTIVE LINK ----- */
-
-const sections = document.querySelectorAll('section[id]')
-
-function scrollActive() {
-    const scrollY = window.scrollY;
-
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 50,
-            sectionId = current.getAttribute('id')
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-
-            document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
-
-        } else {
-
-            document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
-
+        if (!link) {
+            return;
         }
-    })
+
+        link.classList.toggle('active-link', currentPosition >= sectionTop && currentPosition < sectionBottom);
+    });
 }
 
-window.addEventListener('scroll', scrollActive)
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const menu = document.getElementById('myNavMenu');
+        const toggle = document.querySelector('.menu-toggle');
 
-
-/* ----- Description Toggle Button Management with Auto-Close Functionality----- */
-
-document.addEventListener('DOMContentLoaded', function () {
-    const descriptionButtons = document.querySelectorAll('.description-toggle');
-    let activeDescriptionBox = null;
-
-    descriptionButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const container = this.closest('.details-container');
-            const descriptionBox = container.querySelector('.description-box');
-
-
-            if (activeDescriptionBox && activeDescriptionBox !== descriptionBox) {
-
-                activeDescriptionBox.classList.remove('active');
-                activeDescriptionBox.style.maxHeight = '0';
-                activeDescriptionBox.closest('.details-container').classList.remove('expanded');
-            }
-
-
-            const isOpening = !descriptionBox.classList.contains('active');
-            descriptionBox.classList.toggle('active');
-            container.classList.toggle('expanded');
-
-
-            if (isOpening) {
-                descriptionBox.style.maxHeight = descriptionBox.scrollHeight + 'px';
-                activeDescriptionBox = descriptionBox;
-            } else {
-                descriptionBox.style.maxHeight = '0';
-                activeDescriptionBox = null;
-            }
-        });
+        menu.classList.remove('responsive');
+        toggle.setAttribute('aria-expanded', 'false');
     });
 });
 
+if (window.Typed) {
+    new Typed('.typedText', {
+        strings: [
+            'prediction pipelines with calibrated probabilities',
+            'benchmarking systems for AI model quality',
+            'LLM workflows using APIs, tools and RAG',
+            'clean datasets from raw, noisy data sources'
+        ],
+        loop: true,
+        typeSpeed: 46,
+        backSpeed: 28,
+        backDelay: 1900
+    });
+}
 
+if (window.ScrollReveal) {
+    ScrollReveal().reveal('.reveal-up', {
+        origin: 'bottom',
+        distance: '28px',
+        duration: 750,
+        interval: 90,
+        reset: false
+    });
+}
 
+window.addEventListener('scroll', () => {
+    updateHeader();
+    updateActiveLink();
+});
+
+updateHeader();
+updateActiveLink();

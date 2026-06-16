@@ -1,883 +1,171 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- --------- UNICONS ---------- -->
+    <meta name="description" content="Portfolio of Melissa Abider, AI & Data Engineer specialized in prediction, Machine Learning, LLM/RAG, AI evaluation, benchmarking and data pipelines.">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-
-    <!-- --------- CSS ---------- -->
     <link rel="stylesheet" href="assets/style.css">
-
-    <!-- ----- TYPING JS Link ----- -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-    <!-- ----- SCROLL REVEAL JS Link----- -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
-    <link rel="icon"
-        href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII="
-        type="image/x-icon">
-
-    <title>Portfolio</title>
+    <link rel="icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" type="image/x-icon">
+    <title>Melissa Abider | AI & Data Engineer</title>
 </head>
 
 <body>
-    <div class="container">
-        <!-- --------------- HEADER --------------- -->
-        <nav id="header">
-            <div class="nav-logo">
-                <p class="nav-name">Melissa</p>
-                <span>.</span>
-            </div>
-            <div class="nav-menu" id="myNavMenu">
-                <ul class="nav_menu_list">
-                    <li class="nav_list">
-                    <li class="nav_list">
-                        <a href="#about" class="nav-link">Apropos</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#projects" class="nav-link">Mes Projects</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#education" class="nav-link">Educations</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#competences" class="nav-link">Mes compétences</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#experiences" class="nav-link">Mes experiences</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="#contact" class="nav-link">Contact</a>
-                        <div class="circle"></div>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-menu-btn">
-                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
-            </div>
+    <header class="site-header" id="header">
+        <a class="brand" href="#home" aria-label="Back to top">
+            <span class="brand-mark">MA</span>
+            <span class="brand-text">Melissa Abider</span>
+        </a>
+        <nav class="nav-menu" id="myNavMenu" aria-label="Main navigation">
+            <a href="#profile" class="nav-link">Profile</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" onclick="myMenuFunction()">
+            <i class="uil uil-bars"></i>
+        </button>
+    </header>
 
-
-        <!-- -------------- MAIN ---------------- -->
-        <main class="wrapper">
-            <!-- -------------- FEATURED BOX ---------------- -->
-            <section class="featured-box" id="home">
-                <div class="featured-text">
-                    <div class="featured-text-card">
-                        <span>Abider Melissa</span>
-                    </div>
-                    <div class="featured-name">
-                        <p>Je suis <span class="typedText"></span></p>
-                    </div>
-                    <div class="featured-text-info">
-                        <p>Bienvenue sur mon portfolio !
-                            Vous êtes sur le point de découvrir mon parcours en informatique et développement. Je ne
-                            vais pas tout vous révéler d'emblée... Je vous invite à explorer mes projets et à découvrir
-                            par vous-même ce qui me passionne.<br>
-                            Bonne visite
-
-                        </p>
-                    </div>
-                    <div class="featured-text-btn">
-                    </div>
-                    <div class="social_icons">
-                        <div class="icon"><a href="https://www.linkedin.com/in/melissa-a-0ab782232/" target="_blank"
-                                class="icon">
-                                <i class="uil uil-linkedin-alt"></i>
-                            </a></div>
-                        <div class="icon">
-                            <a href="https://github.com/MelissaAbider" target="_blank" class="icon">
-                                <i class="uil uil-github-alt"></i>
-                            </a>
-                            </i>
-                        </div>
-                    </div>
+    <main>
+        <section class="hero section-band" id="home">
+            <div class="hero-content reveal-up">
+                <p class="eyebrow">Open to permanent AI / Data roles in Paris</p>
+                <h1>I turn data into useful AI products.</h1>
+                <div class="hero-typing" aria-label="Current focus">
+                    <span>Currently building</span>
+                    <strong class="typedText"></strong>
                 </div>
-                <div class="featured-image">
-                    <div class="image">
-                        <img src="assets/images/melissa.jpg" alt="avatar">
-                    </div>
+                <p class="hero-summary">I design applied AI systems that move beyond demos: data extraction and cleaning, feature engineering, prediction, benchmarking, API-based LLM workflows, RAG applications and backend services ready for real users.</p>
+                <div class="hero-capabilities" aria-label="Core capabilities">
+                    <span><i class="uil uil-chart-growth"></i> Predictive modeling & calibrated probabilities</span>
+                    <span><i class="uil uil-database-alt"></i> Data extraction, cleaning & feature engineering</span>
+                    <span><i class="uil uil-comparison"></i> Benchmarking, scoring & model evaluation</span>
+                    <span><i class="uil uil-cloud-data-connection"></i> LLMs via APIs, tool calling & RAG systems</span>
                 </div>
-                <div class="scroll-icon-box">
-                    <a href="#about" class="scroll-btn">
-                        <i class="uil uil-mouse-alt"></i>
-                        <p>Scroll Down</p>
-                    </a>
+                <div class="hero-metrics" aria-label="Career highlights">
+                    <div><strong>AI eval</strong><span>Automated scoring and benchmarking pipelines</span></div>
+                    <div><strong>Prediction</strong><span>Corrosion risk, recommendations and regression models</span></div>
+                    <div><strong>Data</strong><span>ETL, SQL, vector stores and multimodal datasets</span></div>
                 </div>
-
-            </section>
-
-            <!-- -------------- ABOUT BOX ---------------- -->
-            <section class="section" id="about">
-                <div class="top-header">
-                    <h1>Apropos de moi</h1>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="mailto:Melissaabider@gmail.com"><i class="uil uil-envelope"></i>Contact me</a>
                 </div>
-                <div class="row row_exp">
-                    <div class="col">
-                        <div class="about-info">
-                            <h3>Mon introduction</h3>
-                            <p>Bonjour et bienvenue sur mon portfolio ! Je m'appelle Melissa et je suis actuellement
-                                étudiante en licence informatique. Passionnée par le monde numérique depuis mon plus
-                                jeune
-                                âge, j'ai orienté mes études et mes projets personnels vers le domaine de l'informatique
-                                et
-                                du développement.
-                            </p>
-                        </div>
-                    </div>
-
-
+                <div class="hero-links" aria-label="Quick links">
+                    <a href="tel:+33663669774"><i class="uil uil-phone"></i> +33 6 63 66 97 74</a>
+                    <a href="mailto:Melissaabider@gmail.com"><i class="uil uil-envelope-alt"></i> Melissaabider@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/melissa-a-0ab782232/" target="_blank" rel="noopener"><i class="uil uil-linkedin-alt"></i> LinkedIn</a>
+                    <a href="https://github.com/MelissaAbider" target="_blank" rel="noopener"><i class="uil uil-github-alt"></i> GitHub</a>
                 </div>
-
-            </section>
-
-            <!-- -------------- PROJECT BOX ---------------- -->
-
-            <section id="projects">
-                <div class="top-header">
-                    <h1>Projects</h1>
-                </div>
-                <div class="experience-details-container">
-                    <div class="about-containers">
-                        <div class="details-container color-container">
-                            <div class="article-container">
-                                <img src="./assets/images/fast_food.png" alt="Project 1" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">Application fast food
-                            </h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/Fast_food/tree/main'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn  description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <br>
-                            <div class="description-box">
-                                <p class="descpition_p">
-                                    Dans le cadre d'un projet universitaire réalisé en groupe de 6, j'ai pris le rôle de
-                                    chef de projet, supervisant la planification des tâches et la gestion du projet pour
-                                    le développement d'une application de gestion de fast-food. Cette application permet
-                                    aux clients de créer un compte, de s'authentifier, de passer une commande, de
-                                    procéder au paiement et de recevoir une facture. En tant que chef de projet, j'ai
-                                    coordonné l'équipe en utilisant des outils tels que les diagrammes de Gantt et PERT
-                                    pour assurer une gestion efficace du temps et des ressources. J'ai également pris en
-                                    charge la création des diagrammes de cas d'utilisation et des diagrammes de classes
-                                    pour structurer l'application.
-
-                                    Mon travail a consisté à participer au développement des interfaces de l'application
-                                    en Java, ainsi qu'à la rédaction des tests à prévoir (DT). J'ai également veillé à
-                                    la mise en œuvre des tests unitaires avec JUnit 5 pour garantir la qualité du code.
-                                    En tant que coordinateur, j'ai veillé à ce que l'ensemble de l'équipe respecte les
-                                    délais, tout en assurant une communication fluide et en favorisant une collaboration
-                                    optimale pour mener le projet à bien
-                                </p>
-
-                                <span>date : 2024- 2025
-                                </span>
-                            </div>
-                        </div>
-                        <div class="details-container color-container">
-                            <div class="article-container">
-                                <img src="./assets/images/mind.png" alt="Project 1" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">The Mind
-                            </h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/The_mind/tree/main'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn  description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <br>
-                            <div class="description-box">
-                                <p class="descpition_p">
-                                    Dans le cadre du projet de fin de semestre, réalisé en binôme, nous avons développé
-                                    une version informatique du jeu coopératif The Mind, permettant à des utilisateurs
-                                    de jouer via des terminaux, avec d'autres joueurs humains ou des robots
-                                    intelligents. Le développement s'est appuyé sur des scripts Shell pour
-                                    gérer les processus : un gestionnaire de jeu pour coordonner les parties
-                                    (distribution des cartes, vérification des règles, statistiques), un joueur humain
-                                    interagissant via le terminal, et un joueur robot doté d'une intelligence
-                                    artificielle. Nous avons intégré un arbre de décision dans la partie IA pour
-                                    permettre aux robots de simuler une prise de décision stratégique et intelligente en
-                                    analysant leurs cartes et en déterminant le moment optimal pour jouer. En
-                                    complément, nous avons ajouté des fonctionnalités avancées telles que la génération
-                                    automatique de statistiques (graphiques sur les manches réussies, temps moyen de
-                                    réaction) et la création d'un classement des meilleures performances. Ce projet a
-                                    permis de combiner programmation système, intégration d'IA et algorithmes
-                                    décisionnels pour offrir une expérience interactive et intelligente tout en mettant
-                                    en avant nos compétences techniques variées.
-                                </p>
-
-                                <span>date : 2024- 2025
-                                </span>
-                            </div>
-                        </div>
-                        <div class="details-container color-container">
-
-                            <div class="article-container">
-                                <img src="./assets/images/project-1.png" alt="Project 1" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">WebRAG</h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/WebRAG'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn  description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <br>
-                            <div class="description-box">
-                                <p class="descpition_p">Dans le cadre de mon stage de Licence 3, j'ai réalisé un projet
-                                    consistant en la
-                                    conception d'une interface web
-                                    intégrant le système de Récupération Augmentée Générative (RAG). Cette interface
-                                    permet aux utilisateurs de poser
-                                    des questions et d'obtenir des réponses précises tout en leur offrant la possibilité
-                                    de donner leur avis sur
-                                    les réponses fournies. L'objectif principal était d'améliorer l'interaction entre
-                                    les utilisateurs et le système,
-                                    tout en recueillant des retours pour optimiser la qualité du service. Ce projet m'a
-                                    permis de développer
-                                    mes compétences en développement web et en intégration de systèmes d'intelligence
-                                    artificielle
-                                </p>
-
-                                <span>date : 2024
-                                </span>
-                            </div>
-                        </div>
-                        <div class="details-container color-container">
-                            <div class="article-container">
-                                <img src="./assets/images/project-7.png" alt="Project 1" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">Analyse intégrée des interactions
-                                gène-maladie
-                            </h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/Integrated_Gene-Disease_Interaction_Analysis'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn  description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <br>
-                            <div class="description-box">
-                                <p class="descpition_p">Dans le cadre de mon stage de Licence 3, j'ai réalisé un projet
-                                    consistant à développer un outil
-                                    d'analyse intégrée des interactions gène-maladie, accessible via une interface en
-                                    ligne de commande. Ce projet visait à
-                                    permettre aux utilisateurs de récupérer et d'analyser des données complexes sur les
-                                    relations entre gènes et maladies à
-                                    partir de diverses sources, notamment Open Targets et Europe PMC. L'objectif était
-                                    de permettre à l'utilisateur de sélectionner
-                                    une maladie et un gène spécifiques, puis d'extraire automatiquement les informations
-                                    pertinentes issues de la littérature scientifique.
-                                    Le système inclut des fonctionnalités telles que la clusterisation des textes pour
-                                    regrouper les informations similaires,
-                                    ainsi que l'utilisation d'un modèle de Génération Augmentée par Récupération (RAG)
-                                    pour produire des résumés concis des interactions
-                                    gène-maladie. Ce projet m'a permis de mettre en pratique mes compétences en
-                                    programmation Python, en traitement du langage naturel
-                                    et en analyse de données biomédicales, tout en développant
-                                    un outil pratique pour faciliter la recherche dans le domaine de la génétique
-                                    médicale.
-                                </p>
-
-                                <span>date : 2024
-                                </span>
-                            </div>
-                        </div>
-                        <div class="details-container color-container ">
-                            <div class="article-container">
-                                <img src="./assets/images/project-2.png" alt="Project 2" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">AutoSaver</h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/AutoSaver'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <div class="description-box">
-                                <p class="descpition_p">Dans le cadre d'un projet universitaire réalisé en binôme,
-                                    nous avons développé un système de sauvegarde automatique client-serveur.
-                                    Ce système permet aux utilisateurs de sauvegarder des fichiers depuis
-                                    des répertoires spécifiés. Le client, installé sur le poste de l'utilisateur, offre
-                                    la
-                                    possibilité de sélectionner les répertoires à sauvegarder et de définir la fréquence
-                                    des
-                                    sauvegardes. Le serveur, fonctionnant en continu, gère l'authentification des
-                                    utilisateurs,
-                                    stocke les données dans des espaces dédiés et archive les versions antérieures des
-                                    fichiers.Ce projet m'a permis
-                                    d'appliquer nos connaissances en programmation réseau et en gestion de données.
-                                    <br><span>date : 2024
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="details-container color-container">
-                            <div class="article-container">
-                                <img src="./assets/images/project-3.png" alt="Project 3" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">Jeu Loto</h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/Jeu_Loto'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <div class="description-box">
-                                <p class="descpition_p">Dans le cadre du projet de fin de semestre, réalisé en
-                                    binôme,
-                                    nous avons développé un jeu de loterie interactif en utilisant Apache NetBeans. Ce
-                                    projet comprend plusieurs fonctionnalités clés :
-                                    la création de profils de joueurs via une interface conviviale, la génération d'une
-                                    liste de lots à gagner, et le lancement d'une partie où
-                                    les cartes de jeu sont générées aléatoirement. Cette expérience m'a permis de
-                                    renforcer mes compétences en développement logiciel,
-                                    en mettant l'accent sur la conception d'interfaces utilisateur et la gestion de la
-                                    logique de jeu aléatoire.
-                                    <br>
-                                    <span>date : 2023
-                                    </span>
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="details-container color-container">
-                            <div class="article-container">
-                                <img src="./assets/images/project-4.png" alt="Project 4" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">Jeu tennis</h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/Jeu_tenis'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <div class="description-box">
-                                <p class="descpition_p"> Dans le cadre d'un projet universitaire individuel, j'ai conçu
-                                    et développé une
-                                    interface
-                                    web interactive simulant une partie de tennis. Ce projet innovant utilise Three.js
-                                    pour la
-                                    création d'objets en 3D, offrant une expérience visuelle immersive. La simulation
-                                    met
-                                    en scène deux joueurs échangeant une balle de tennis dans un environnement virtuel
-                                    réaliste.
-                                    Cette réalisation m'a permis d'approfondir mes compétences en développement web
-                                    avancé,
-                                    en intégrant des technologies de pointe comme Three.js pour la 3D, ainsi que
-                                    d'autres concepts
-                                    web modernes pour créer une expérience utilisateur fluide et engageante
-                                    <br>
-                                    <span>date : 2024
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="details-container color-container">
-                            <div class="article-container">
-                                <img src="./assets/images/project-5.png" alt="Project 5" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">Labyrinthe </h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/Labyrinthe'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <div class="description-box">
-                                <p class="descpition_p">Dans le cadre de notre projet de fin de semestre, réalisé en
-                                    binôme,
-                                    nous avons développé un jeu de labyrinthe interactif à partir d'une console
-                                    terminal.
-                                    Le projet consiste à définir les caractéristiques d'un labyrinthe parsemé
-                                    d'obstacles,
-                                    à lancer une partie, et à tenter de rejoindre la case de sortie. Ce projet m'a
-                                    permis
-                                    d'approfondir mes compétences en programmation, en mettant l'accent sur
-                                    la conception de jeux basés sur la console et la gestion de la logique de jeu
-                                    <br>
-                                    <span>date : 2023
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="details-container color-container">
-                            <div class="article-container">
-                                <img src="./assets/images/project-6.png" alt="Project 6" class="project-img" />
-                            </div>
-                            <h2 class="experience-sub-title project-title">Site web L1</h2>
-                            <div class="btn-container">
-                                <button class="btn btn-color-2 project-btn"
-                                    onclick="location.href='https://github.com/MelissaAbider/projet_dev_web_L1-'">
-                                    Github
-                                </button>
-                                <button class="btn btn-color-2 project-btn description-toggle">
-                                    Description
-                                </button>
-                            </div>
-                            <div class="description-box">
-                                <p class="descpition_p">Projet universitaire réalisé en binôme : développement d'un site
-                                    web interactif mettant en application
-                                    diverses notions avancées de programmation web. Ce projet a impliqué la conception
-                                    de formulaires dynamiques pour une meilleure
-                                    interaction utilisateur, l'utilisation de Canvas pour la création d'objets en 2D,
-                                    offrant ainsi des éléments graphiques interactifs.
-                                    Nous avons également intégré d'autres concepts web modernes pour enrichir
-                                    l'expérience utilisateur et améliorer les fonctionnalités du
-                                    site.
-                                    <br>
-                                    <span>date : 2023
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-            </section>
-            <!-- -------------- EDUCATION BOX ---------------- -->
-            <section>
-                <div class="top-header">
-                    <h1 id="education">Etudes </h1>
-                </div>
-                <div class="row">
-                    <div class="col competence_col">
-                        <div class="about-info">
-                            <h3>DEUG STS mention sciences et techniques</h3>
-                            <p>Etablissement : Universté de bourgogne<br>
-                                Années : 2022-2024 <br>
-                                Niveau : Bac+2
-                                <br> mention : BIEN
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col competence_col">
-                        <div class="about-info">
-                            <h3>Licence 3 informatique en cours</h3>
-                            <p>Etablissement : Universté de bourgogne<br>
-                                Année : 2024-2025 <br>
-                                Niveau : Bac+3
-                                <br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- -------------- COMPETENCES BOX ---------------- -->
-
-            <section id="competences">
-                <div class="top-header">
-                    <h1>Competences</h1>
-                </div>
-                <div class="experience-details-container">
-                    <div class="about-containers">
-
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Intelligence Artificielle</h2>
-                            <br>
-
-                            <ul>
-                                <li>
-                                    <p id="p_ia">Développement de systèmes de récupération augmentée (RAG)</p>
-                                </li>
-                                <li>
-                                    <p id="p_ia">Clusterisation pour l'analyse de données et la ségmentation</p>
-                                </li>
-                                <li>
-                                    Classification : K-Nearest Neighbors (KNN), KMeans
-                                </li>
-                                <li>Régression : linéaire, polynomiale, logistique</li>
-                            </ul>
-                            <br>
-                            <h4>LLM utilisés</h4>
-                            <ul>
-                                <li>Mistral 7B</li>
-                                <li>llama3 8B</li>
-                                <li>llama2</li>
-                            </ul>
-                            <br>
-                            <h4>Libraries</h4>
-                            <ul>
-                                <li>Scikit-learn</li>
-                                <li>Langchain</li>
-                                <li>Txtai </li>
-                                <li>Tiktoken</li>
-                            </ul>
-                            <br>
-                            <h4>Modele d'embedding</h4>
-                            <ul>
-                                <li> Nomic embed-text</li>
-
-                            </ul>
-
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Gestion de projets</h2>
-                            <br>
-                            <ul>
-                                <li>Gestion d’équipe : Coordination des tâches, gestion des priorités et suivi de
-                                    l'avancement</li>
-                                <li>Principes SOLID : Application des principes SOLID pour garantir un code modulaire,
-                                    extensible et maintenable</li>
-                                <li>Planification et suivi : Utilisation des diagrammes de Gantt et PERT pour gérer les
-                                    délais et les ressources</li>
-                                <li>Méthodes agiles : gestion des sprints et suivi des tâches</li>
-                                <li>Conception et documentation : Création de diagrammes UML (cas d’utilisation,
-                                    classes, séquence), rédaction de spécifications techniques.</li>
-                            </ul>
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Langages de programation</h2>
-                            <br>
-                            <ul>
-                                <li>Python</li>
-                                <li>Java</li>
-                                <li>c</li>
-                                <li>c++</li>
-                            </ul>
-                            <br>
-                            <h2 class="title_competence">Bases de données</h2>
-                            <br>
-                            <ul>
-                                <li>SQL, PL/SQL</li>
-                                <li>Sqlite, Oracle, MongoDB</li>
-                            </ul>
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Outils et Technologies</h2>
-                            <br>
-                            <p>Git</p>
-                            <br>
-                            <p>Gitub et Gitlab</p>
-                            <br>
-                            <p>Docker</p>
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Système d'exploitation</h2>
-                            <br>
-                            <p>Linux</p>
-                            <br>
-                            <p>windows</p>
-
-                        </div>
-
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Programmation desktop et mobile</h2>
-                            <br>
-                            <h4>front-end </h4>
-                            <p>Swing
-                            </p>
-                            <br>
-                            <h4>Back-end
-                            </h4>
-                            <p>Java
-                            </p>
-                        </div>
-
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Programmation web</h2>
-                            <br>
-                            <h4>Front-end</h4>
-                            <ul>
-                                <li>HTML5</li>
-                                <li>CSS3</li>
-                                <li>JavaScript</li>
-                            </ul>
-                            <br>
-
-                            <br>
-
-                            <h4>Frameworks et API</h4>
-                            <ul>
-                                <li>Spring Boot</li>
-                                <li>React</li>
-                                <li>FastAPI</li>
-                                <li>Graph API</li>
-                            </ul>
-                            <br>
-
-
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Synthèse / Traitement d'image
-                            </h2>
-                            <br>
-                            <p>Three.js</p>
-                            <br>
-                            <p>Octave / Matlab</p>
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">Programmation embarqué</h2>
-                            <br>
-                            <p>Arduino</p>
-                            <br>
-                            <p>Assembleur</p>
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">programmation shell et traitement de fichier text</h2>
-                            <br>
-                            <p>Bash</p>
-                            <br>
-                            <p>Perl</p>
-                        </div>
-                        <div class="details-container2 color-container">
-                            <h2 class="title_competence">bureautique</h2>
-                            <br>
-                            <p>Word</p>
-                            <br>
-                            <p>PowerPoint</p>
-                            <br>
-                            <p>Exel</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </section>
-            <br>
-
-            <!-- -------------- EXPERIENCE BOX ---------------- -->
-            <section>
-                <div class="top-header">
-                    <h1 id="experiences">Experiences et Certifications</h1>
-                </div>
-                <div class="row row_exp">
-                    <div class="col">
-                        <div class="about-info">
-                            <h3>Experiences </h3><br>
-                            <h4>Année 2025 : </h4><br>
-                            <ul>
-                                <li>
-                                    <p id="p_ia"> <span id="titre_experience">DEVELOPPEUSE D'APPLICATION DESKTOP EN JAVA
-                                            (depuis le 10/2024)
-                                            : </span>
-
-
-                                        En tant que Développeuse d'Application Desktop en Java je contribue au
-                                        développement et à l'amélioration d'applications bureautiques en Java, en
-                                        mettant l'accent sur la conception d'interfaces utilisateurs intuitives et
-                                        l'optimisation des performances. Ce rôle me permet de développer des
-                                        compétences techniques solides en programmation Java ainsi qu'en architecture
-                                        d'applications de bureau. Cette experience
-                                        a été effectuée en étroite collaboration avec des équipes multidisciplinaires me
-                                        permettant
-                                        de renforcer mes capacités en gestion de projet, communication et résolution de
-                                        problèmes en équipe. Mon implication dans la phase de conception, le codage
-                                        me permet de contribuer activement à la réussite des
-                                        projets tout en favorisant une collaboration efficace et une répartition
-                                        optimale des tâches </p>
-                                </li>
-                            </ul>
-                            <br>
-                            <h4>Année 2024 : </h4><br>
-                            <ul>
-                                <li>
-                                    <p id="p_ia"> <span id="titre_experience">Stage de 2 mois au laboratoire
-                                            d'intelligence
-                                            artificielle CIAD : </span>ce stage a
-                                        été
-                                        une
-                                        expérience extrêmement enrichissante non seulement sur le plan
-                                        professionnel mais aussi sur le plan personnel. J'ai eu l'opportunité de
-                                        travailler en
-                                        autonomie et en collaboration avec mes collègues, ce qui a renforcé mes
-                                        compétences en
-                                        gestion de projet et en travail d'équipe.
-                                        J’ai été chargé de concevoir, développer et mettre en œuvre divers composants du
-                                        projet. Ce rôle m'a permis de prendre des initiatives, de gérer les différentes
-                                        phases
-                                        des
-                                        projets de manière autonome. Ces responsabilités ont été déterminantes pour
-                                        améliorer
-                                        ma capacité à prendre des décisions et à résoudre des problèmes complexes. </p>
-                                </li>
-                                <br>
-                                <li>
-                                    <p id="p_ia"><span id="titre_experience">Enseignement des fondamentaux de la
-                                            programmation
-                                            web (HTML, CSS, JavaScript)
-                                            avec
-                                            Konexio :</span> Au cours de l'année universitaire, j'ai dispensé des cours
-                                        et animé
-                                        des
-                                        activités
-                                        pratiques en développement web,
-                                        en télétravail, pour des apprenants. À la fin de chaque séance,
-                                        j'ai corrigé les travaux réalisés, offrant ainsi un suivi personnalisé pour
-                                        garantir
-                                        leur
-                                        progression.
-                                    </p>
-                                </li>
-                                <br>
-                                <li>
-                                    <p id="p_ia"><span id="titre_experience">Enseignement de la matière technologie au
-                                            collège
-                                            : </span>Au cours de l'année scolaire, j'ai occupé le poste d'assistante
-                                        professeur
-                                        en
-                                        technologie au collège,
-                                        où j'ai animé des travaux pratiques (TP) sur des sujets variés tels que la
-                                        programmation
-                                        par
-                                        blocs avec Scratch,
-                                        le montage d'un réseau local, et la programmation d'un robot de nettoyage, la
-                                        préparation à
-                                        la
-                                        certification PIX...ect.
-                                        J'ai su établir un lien direct entre mes études et l'enseignement, en
-                                        transmettant
-                                        des concepts techniques de manière accessible et engageante pour les collégiens,
-                                        tout en stimulant leur curiosité et leur intérêt pour les technologies </p>
-                                </li><br>
-                            </ul>
-                            <h4>Année 2023 : </h4><br>
-                            <ul>
-                                <li>
-                                    <p id="p_ia">Secrétariat d’examens à l’université de bourgognes : J'ai eu
-                                        l'opportunité
-                                        d'assister les étudiants
-                                        en situation d'handicap en les aidant à rédiger leurs réponses pendant les
-                                        épreuves.
-                                        Mon rôle consistait à garantir un environnement
-                                        d'examen adapté et serein, en veillant à ce que chaque étudiant puisse exprimer
-                                        ses
-                                        connaissances de manière optimale.
-
-                                    </p>
-                                </li> <br>
-                                <li>
-                                    <p id="p_ia">Preneuse de notes à l'université de Bourgogne pour les personnes en
-                                        situation
-                                        d'handicap</p>
-                                </li>
-                                <br>
-                                <li>Equipière polyvalente chez McDonald’s pendant 6 mois</li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                </div>
-                <br> <br> <br>
-                <div class="row row_exp">
-                    <div class="col experience_col">
-                        <div class="about-info info">
-                            <h3>Certifications </h3>
-                            <p>Python : des fondamentaux aux concepts avancés du
-                                langage-Université
-                                Côte d'Azur-MOOC FUN<br>
-                            </p> <br>
-                            <p>Maîtriser le shell Bash - Université de
-                                la Réunion - MOOC FUN</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- -------------- CONTACT BOX ---------------- -->
-
-            <section class="section" id="contact">
-                <div class="top-header">
-                    <h1>Contact</h1>
-                </div>
-                <div class="row row_exp">
-                    <div class="col">
-                        <div class="contact-info">
-                            <h2>Contactez moi <i class="uil uil-corner-right-down"></i></h2>
-                            <p><i class="uil uil-envelope"></i> Email : melissaabider@gmail.com</p>
-                            <p><i class="uil uil-phone"></i> Tel : 0663669774</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-
-        <!-- --------------- FOOTER --------------- -->
-        <footer>
-            <div class="top-footer">
-                <p>Melissa Abider</p>
             </div>
-            <div class="middle-footer">
-                <ul class="footer-menu">
-                    <li class="footer_menu_list">
-                        <a href="#home">home</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="#about">A propos</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="#projects">Mes Projects</a>
-                    </li>
-                    <li class="footer_menu_list">
-                        <a href="#education">Education</a>
-                    <li class="footer_menu_list">
-                        <a href="#competences">Competences</a>
-                    <li class="footer_menu_list">
-                        <a href="#experiences">Mes experiences</a>
-                    <li class="footer_menu_list">
-                        <a href="#contact">Contact</a>
-                    </li>
-
-
-                </ul>
+            <div class="hero-visual reveal-up">
+                <div class="portrait-frame"><img src="assets/images/melissa.jpg" alt="Portrait of Melissa Abider"></div>
+                <div class="availability-panel"><span>Currently seeking</span><strong>Permanent role in AI, ML or Data Engineering</strong></div>
+                <div class="tech-orbit" aria-hidden="true"><span>RAG</span><span>ML</span><span>LLM</span></div>
             </div>
-            <div class="footer-social-icons">
-                <div class="icon"><a href="https://www.linkedin.com/in/melissa-a-0ab782232/" target="_blank"
-                        class="icon">
-                        <i class="uil uil-linkedin-alt"></i>
-                    </a></div>
-                <div class="icon"><a href="https://github.com/MelissaAbider" target="_blank" class="icon">
-                        <i class="uil uil-github-alt"></i>
-                    </a>
-                    </i></div>
+        </section>
+
+        <section class="section" id="profile">
+            <div class="section-heading reveal-up">
+                <p class="eyebrow">Profile</p>
+                <h2>Applied AI mindset, data engineering discipline, product-oriented delivery.</h2>
             </div>
-        </footer>
+            <div class="profile-grid">
+                <article class="profile-card reveal-up"><h3>What I build</h3><p>End-to-end AI workflows: data extraction, cleaning, feature engineering, model training, evaluation, backend deployment and feedback loops.</p></article>
+                <article class="profile-card reveal-up"><h3>What I bring</h3><p>Experience in prediction tasks, NLP, LLM/RAG systems, API-based model integration, AI evaluation, vector search, SQL/ETL pipelines and backend development.</p></article>
+                <article class="profile-card highlight-card reveal-up"><h3>What I am looking for</h3><p>A permanent position where I can contribute to ML models, LLM applications, data engineering pipelines and production-ready AI solutions.</p></article>
+            </div>
+        </section>
 
-    </div>
+        <section class="section workflow-section" id="workflow">
+            <div class="section-heading reveal-up"><p class="eyebrow">How I work</p><h2>From raw data to evaluated AI features.</h2></div>
+            <div class="workflow-grid">
+                <article class="workflow-card reveal-up"><span>01</span><h3>Extract & prepare data</h3><p>Collect structured and unstructured data, clean missing or noisy values, design SQL/ETL flows and prepare datasets for reproducible experiments.</p></article>
+                <article class="workflow-card reveal-up"><span>02</span><h3>Model & predict</h3><p>Build predictive models, regression pipelines, recommendation systems and calibrated probability outputs with Scikit-learn, PyTorch and gradient boosting tools.</p></article>
+                <article class="workflow-card reveal-up"><span>03</span><h3>Benchmark & evaluate</h3><p>Compare model quality with task-specific metrics, automated scoring, validation strategies, Brier score, calibration curves and LLM evaluation pipelines.</p></article>
+                <article class="workflow-card reveal-up"><span>04</span><h3>Integrate & deploy</h3><p>Use models through APIs, build LLM agents with tool calling, connect RAG/vector search systems and expose AI capabilities through FastAPI or backend services.</p></article>
+            </div>
+        </section>
 
+        <section class="section muted-section" id="skills">
+            <div class="section-heading reveal-up"><p class="eyebrow">Technical skills</p><h2>A practical stack for AI systems, data workflows and deployment.</h2></div>
+            <div class="skills-layout">
+                <article class="skill-block reveal-up"><div class="skill-icon"><i class="uil uil-brain"></i></div><h3>AI / Machine Learning</h3><p>Predictive modeling, regression, classification, calibrated probabilities, Deep Learning, NLP, LLMs, Transformers, RAG, embeddings, vector search, LLM evaluation, benchmarking, tool calling, multi-step reasoning, prompt engineering and recommendation systems.</p></article>
+                <article class="skill-block reveal-up"><div class="skill-icon"><i class="uil uil-code-branch"></i></div><h3>Programming</h3><p>Python, Pandas, NumPy, Scikit-learn, PyTorch, Java, C, C++, CAML, Prolog, Perl, Bash, HTML, CSS, JavaScript and PHP.</p></article>
+                <article class="skill-block reveal-up"><div class="skill-icon"><i class="uil uil-database"></i></div><h3>Data & Databases</h3><p>Data extraction, cleaning, transformation, SQL, PL/SQL, Oracle, MySQL, SQLite, ChromaDB, MongoDB, Hadoop, Hive, Spark, ETL, feature engineering, data analysis and dataset preparation.</p></article>
+                <article class="skill-block reveal-up"><div class="skill-icon"><i class="uil uil-cloud-upload"></i></div><h3>Cloud & Deployment</h3><p>Docker, FastAPI, API-based model integration, Google Cloud Platform, Microsoft Azure, Git, CI/CD, Agile/Scrum, backend APIs and collaborative workflows.</p></article>
+            </div>
+        </section>
 
+        <section class="section" id="experience">
+            <div class="section-heading reveal-up"><p class="eyebrow">Professional experience</p><h2>From AI research prototypes to backend features and evaluation pipelines.</h2></div>
+            <div class="timeline">
+                <article class="timeline-item reveal-up"><div class="timeline-date">Sep 2025 - Present</div><div class="timeline-content"><h3>AI / Machine Learning Engineer Apprentice</h3><p class="company">Renault Group</p><ul><li>Build and evaluate LLM-based agents using multi-step reasoning, tool calling and automated scoring.</li><li>Develop AI evaluation pipelines for benchmarking and model quality assessment.</li><li>Implement and optimize deep learning models with PyTorch.</li><li>Design and deploy a recommendation system using FastAPI and embeddings.</li><li>Build end-to-end AI pipelines covering data processing, modeling and deployment.</li><li>Process and analyze large-scale multimodal datasets, including text and audio.</li></ul></div></article>
+                <article class="timeline-item reveal-up"><div class="timeline-date">Oct 2024 - Mar 2025</div><div class="timeline-content"><h3>Application Developer - Student Job</h3><p class="company">Ekoscan Integrity Group</p><ul><li>Developed backend features in Java using OOP principles and MVC architecture.</li><li>Used Git for version control, branching and collaborative workflows.</li><li>Contributed to CI/CD practices and worked in Agile/Scrum sprints.</li></ul></div></article>
+                <article class="timeline-item reveal-up"><div class="timeline-date">Jul 2024 - Aug 2024</div><div class="timeline-content"><h3>AI Research Intern</h3><p class="company">Distributed Knowledge and AI Laboratory - CIAD</p><ul><li>Designed and deployed a RAG system using embeddings and vector search.</li><li>Built AI data pipelines with ETL, SQL and ChromaDB for experimentation.</li><li>Developed an LLM-based conversational system with contextual reasoning.</li><li>Implemented model evaluation and clustering tools.</li></ul></div></article>
+            </div>
+        </section>
 
-    <!-- ----- MAIN JS ----- -->
+        <section class="section muted-section" id="projects">
+            <div class="section-heading reveal-up">
+                <p class="eyebrow">Projects & hackathons</p>
+                <h2>All my public GitHub work, ordered chronologically from newest to oldest.</h2>
+                <p class="section-intro">Each project is structured around the need, the technical approach and the delivered solution so recruiters can quickly understand the problem, my engineering choices and the outcome.</p>
+            </div>
+            <div class="project-grid chronological-projects">
+                <article class="project-card featured-project reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Python - Realtime AI - Audio</span><span class="project-year">2026</span></div><h3>AI Agents Conversation & Voice Naturalness Analysis</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Generate comparable AI-to-AI voice conversations and evaluate vocal behavior reproducibly.</dd></div><div><dt>Built</dt><dd>Controlled prompts, personas and speakers, realtime AI clients, stereo WAV recording and JSON transcripts.</dd></div><div><dt>Impact</dt><dd>Experimental pipeline for conversation generation, transcript export and voice-level naturalness metrics.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/IA_agents_conversation" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">PHP - MVC - Flashcards</span><span class="project-year">2026</span></div><h3>Revision Manager</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Help learners organize flashcards and revise knowledge more efficiently.</dd></div><div><dt>Built</dt><dd>Structured PHP application with routing, controllers, models, authentication and flashcard management.</dd></div><div><dt>Impact</dt><dd>Web app for registration, login, question/answer cards and revision workflows.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Gestionnaire_revision" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card featured-project reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Python - Trustworthy AI - Cybersecurity</span><span class="project-year">2026</span></div><h3>CISPA European Championship in Trustworthy AI</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Solve AI security tasks under hidden test sets and live scoring.</dd></div><div><dt>Built</dt><dd>Adversarial examples, generated-image attribution, watermark detection, surrogate models and forensic pipelines.</dd></div><div><dt>Impact</dt><dd>Ranked 2nd, won qualification for the European final and delivered robust trustworthy AI solutions.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/CISPA_European_Championship" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card featured-project reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Python - Prediction - Calibration</span><span class="project-year">2026</span></div><h3>Aircraft Corrosion Risk Prediction</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Estimate aircraft corrosion risk for each aircraft_id and inspection month.</dd></div><div><dt>Built</dt><dd>Clean monthly environmental data, build temporal features, train ensembles and validate probability calibration.</dd></div><div><dt>Impact</dt><dd>End-to-end ML pipeline producing corrosion_risk probabilities between 0 and 1 for submission.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Corrosion_prediction" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">PHP - MySQL - CRUD</span><span class="project-year">2025</span></div><h3>Electronic Medical Records Manager</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Manage patient medical records through a simple web interface.</dd></div><div><dt>Built</dt><dd>PHP/MySQL app with forms, listing, filtering and statistics over stored records.</dd></div><div><dt>Impact</dt><dd>CRUD application to create, view, delete, filter records and display patient statistics.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Gestion_dossiers_medicaux" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">PHP - MySQL - Inventory</span><span class="project-year">2025</span></div><h3>Product Management App</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Manage a product catalog with authenticated editing and public browsing.</dd></div><div><dt>Built</dt><dd>Product creation, category filtering, stock total calculation and discount features with PHP/MySQL.</dd></div><div><dt>Impact</dt><dd>Inventory app covering product workflows and business calculations.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Gestion_produits" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">HTML - CSS - JavaScript</span><span class="project-year">2025</span></div><h3>Portfolio Website</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Present my profile, experience, skills and projects in one accessible place.</dd></div><div><dt>Built</dt><dd>Static responsive website with structured sections, project cards and recruiter-friendly content.</dd></div><div><dt>Impact</dt><dd>Portfolio website optimized for desktop and mobile reading.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/portfolio" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Java - MVC - JUnit</span><span class="project-year">2025</span></div><h3>Fast Food Management App</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Model a complete fast-food ordering workflow.</dd></div><div><dt>Built</dt><dd>Team project with UML, Gantt/PERT planning, MVC architecture, Java interfaces and unit testing.</dd></div><div><dt>Impact</dt><dd>Application covering account creation, authentication, order, payment and invoice generation.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Fast_food" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Shell - Game Logic - AI Bot</span><span class="project-year">2025</span></div><h3>The Mind Terminal Game</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Create a terminal version of the cooperative card game with human and robot players.</dd></div><div><dt>Built</dt><dd>Shell scripts coordinate processes, card distribution, rules, statistics and robot decisions.</dd></div><div><dt>Impact</dt><dd>Interactive terminal game with decision-tree robot behavior and automatic performance statistics.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/The_mind" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">MATLAB - FFT - Algorithms</span><span class="project-year">2024</span></div><h3>Fast Fourier Transform Algorithm</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Explore a core signal-processing algorithm and its computational behavior.</dd></div><div><dt>Built</dt><dd>Implemented and experimented with the Fast Fourier Transform in MATLAB.</dd></div><div><dt>Impact</dt><dd>Algorithmic project focused on numerical computing and frequency-domain analysis foundations.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Algo_Fourrier_Rapide" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card featured-project reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Python - BioNLP - RAG</span><span class="project-year">2024</span></div><h3>Integrated Gene-Disease Interaction Analysis</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Analyze relationships between selected genes and diseases using scientific sources.</dd></div><div><dt>Built</dt><dd>Retrieve data from Open Targets and Europe PMC, extract passages, cluster text and generate RAG summaries.</dd></div><div><dt>Impact</dt><dd>CLI analysis workflow producing JSON/CSV outputs, clusters and concise interaction summaries.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Integrated_Gene-Disease_Interaction_Analysis" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card featured-project reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Python - FastAPI - Chroma - Docker</span><span class="project-year">2024</span></div><h3>WebRAG</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Let users ask questions, receive contextual answers and provide feedback.</dd></div><div><dt>Built</dt><dd>Combined FastAPI, SQLite, Chroma vector search, local LLM deployment with Ollama/Mistral and Docker Compose.</dd></div><div><dt>Impact</dt><dd>Web RAG application with answer generation, feedback collection and stored interaction history.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/WebRAG" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Web - Three.js - 3D</span><span class="project-year">2024</span></div><h3>Tennis Game</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Create an interactive web experience simulating a tennis match.</dd></div><div><dt>Built</dt><dd>Used web technologies and Three.js concepts to represent a 3D scene with players and ball movement.</dd></div><div><dt>Impact</dt><dd>3D game prototype demonstrating interactive front-end and visual programming skills.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Jeu_tenis" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Java - Console Game</span><span class="project-year">2024</span></div><h3>Maze Game</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Build a playable maze where a user navigates obstacles and reaches the exit.</dd></div><div><dt>Built</dt><dd>Implemented console game logic, maze configuration and player movement in Java.</dd></div><div><dt>Impact</dt><dd>Java game focused on control flow, state management and gameplay rules.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Labyrinthe" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Java - Desktop UI - Random Logic</span><span class="project-year">2024</span></div><h3>Lottery Game</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Create an interactive lottery game with player profiles and generated game cards.</dd></div><div><dt>Built</dt><dd>Developed a Java desktop project with profile creation, prize lists and random game generation.</dd></div><div><dt>Impact</dt><dd>Desktop game strengthening UI design, random logic and software structure.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/Jeu_Loto" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">HTML - CSS - JavaScript</span><span class="project-year">2024</span></div><h3>First-Year Web Development Project</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Practice advanced web programming fundamentals through an interactive website.</dd></div><div><dt>Built</dt><dd>Built dynamic forms, Canvas-based 2D elements and JavaScript interactions.</dd></div><div><dt>Impact</dt><dd>Front-end project consolidating HTML, CSS, JavaScript, Canvas and user interaction basics.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/projet_dev_web_L1-" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+                <article class="project-card reveal-up"><div class="project-body"><div class="project-topline"><span class="tag">Java - Client Server - Backup</span><span class="project-year">2024</span></div><h3>AutoSaver</h3><dl class="project-brief"><div><dt>Problem</dt><dd>Automatically back up user-selected directories with configurable frequency and stored versions.</dd></div><div><dt>Built</dt><dd>Designed a client-server system handling authentication, backup configuration, storage spaces and archived file versions.</dd></div><div><dt>Impact</dt><dd>Java backup application demonstrating network programming, persistence and file-management workflows.</dd></div></dl><a class="project-link" href="https://github.com/MelissaAbider/AutoSaver" target="_blank" rel="noopener">View repository <i class="uil uil-external-link-alt"></i></a></div></article>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="section-heading reveal-up"><p class="eyebrow">Education</p><h2>Computer science foundations strengthened by decision systems and data.</h2></div>
+            <div class="education-grid">
+                <article class="education-card reveal-up"><span class="education-date">2025 - Present</span><h3>Master's Degree - MIAGE, Decision Information Systems</h3><p>University of Paris-Saclay</p><p class="education-detail">Big Data, Business Intelligence, Operations Research, Database Management, Data Analysis and Decision Modeling.</p></article>
+                <article class="education-card reveal-up"><span class="education-date">2022 - 2025</span><h3>Bachelor's Degree in Computer Science</h3><p>University of Burgundy Europe</p><p class="education-detail">Ranked 5th out of 47 students, with strong coursework in programming, algorithms, databases, systems and software engineering.</p></article>
+            </div>
+        </section>
+
+        <section class="section muted-section" id="certifications">
+            <div class="section-heading reveal-up"><p class="eyebrow">Certifications, languages & interests</p><h2>Continuous learning, clear communication and curiosity beyond code.</h2></div>
+            <div class="info-columns">
+                <article class="info-card reveal-up"><h3>Certifications</h3><ul><li>IBM AI Engineering Professional Certificate - in progress</li><li>Introduction to Azure SQL - Microsoft</li><li>Python - Universite Cote d'Azur / MOOC FUN</li><li>Mastering the Bash shell - MOOC FUN</li></ul></article>
+                <article class="info-card reveal-up"><h3>Languages</h3><ul><li>French - C2</li><li>English - C1</li></ul></article>
+                <article class="info-card reveal-up"><h3>Interests</h3><ul><li>Drawing</li><li>Sport</li><li>Travel</li></ul></article>
+            </div>
+        </section>
+
+        <section class="contact-section section" id="contact">
+            <div class="contact-content reveal-up"><p class="eyebrow">Contact</p><h2>Let's talk about applied AI, data pipelines or a permanent role.</h2><p>I am based in Paris and open to opportunities in AI Engineering, Machine Learning Engineering and Data Engineering.</p><div class="contact-actions"><a class="btn btn-primary" href="mailto:Melissaabider@gmail.com"><i class="uil uil-envelope"></i>Email</a><a class="btn btn-secondary" href="tel:+33663669774"><i class="uil uil-phone"></i>Phone</a><a class="btn btn-secondary" href="https://github.com/MelissaAbider" target="_blank" rel="noopener"><i class="uil uil-github-alt"></i>GitHub</a></div></div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><p>Melissa Abider - AI & Data Engineer</p><a href="#home">Back to top</a></footer>
     <script src="assets/js.js"></script>
 </body>
 
 </html>
+
+
+
+
