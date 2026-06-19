@@ -1,5 +1,15 @@
 [
   {
+    "title": "Vocea - AI Career Copilot Year: 2026 Tag: AI",
+    "year": "2026",
+    "tag": "AI, Voice Assistant, Career Tech, CV Builder, Job Matching GitHub",
+    "problem": "Job seekers often struggle to describe their experience clearly, build a professional CV, and identify relevant job opportunities. Traditional CV builders feel like long forms, and they stop once the document is created",
+    "built": "I built Vocea, a voice-first AI assistant that interviews the user, extracts structured career information, generates an editable professional CV, and recommends similar job opportunities with matching scores. The app includes a business demo flow, fake user profile, CV export, job matching, BEST opportunity highlighting, and a ready-to-copy application pitch",
+    "impact": "Vocea turns CV creation into a guided conversation and connects the final CV to concrete job opportunities. It reduces friction for candidates and demonstrates how AI can move from document generation to career action. Then commit the actual modified data/projects.json file",
+    "url": "https://github.com/MelissaAbider/vocea-career-copilot",
+    "featured": false
+  },
+  {
     "title": "AI Agents Conversation & Voice Naturalness Analysis",
     "year": "2026",
     "tag": "Python - Realtime AI - Audio",
