@@ -1,0 +1,172 @@
+[
+  {
+    "title": "AI Agents Conversation & Voice Naturalness Analysis",
+    "year": "2026",
+    "tag": "Python - Realtime AI - Audio",
+    "problem": "Generate comparable AI-to-AI voice conversations and evaluate vocal behavior reproducibly.",
+    "built": "Controlled prompts, personas and speakers, realtime AI clients, stereo WAV recording and JSON transcripts.",
+    "impact": "Experimental pipeline for conversation generation, transcript export and voice-level naturalness metrics.",
+    "url": "https://github.com/MelissaAbider/IA_agents_conversation",
+    "featured": true
+  },
+  {
+    "title": "Revision Manager",
+    "year": "2026",
+    "tag": "PHP - MVC - Flashcards",
+    "problem": "Help learners organize flashcards and revise knowledge more efficiently.",
+    "built": "Structured PHP application with routing, controllers, models, authentication and flashcard management.",
+    "impact": "Web app for registration, login, question/answer cards and revision workflows.",
+    "url": "https://github.com/MelissaAbider/Gestionnaire_revision",
+    "featured": false
+  },
+  {
+    "title": "CISPA European Championship in Trustworthy AI",
+    "year": "2026",
+    "tag": "Python - Trustworthy AI - Cybersecurity",
+    "problem": "Solve AI security tasks under hidden test sets and live scoring.",
+    "built": "Adversarial examples, generated-image attribution, watermark detection, surrogate models and forensic pipelines.",
+    "impact": "Ranked 2nd, won qualification for the European final and delivered robust trustworthy AI solutions.",
+    "url": "https://github.com/MelissaAbider/CISPA_European_Championship",
+    "featured": true
+  },
+  {
+    "title": "Aircraft Corrosion Risk Prediction",
+    "year": "2026",
+    "tag": "Python - Prediction - Calibration",
+    "problem": "Estimate aircraft corrosion risk for each aircraft_id and inspection month.",
+    "built": "Clean monthly environmental data, build temporal features, train ensembles and validate probability calibration.",
+    "impact": "End-to-end ML pipeline producing corrosion_risk probabilities between 0 and 1 for submission.",
+    "url": "https://github.com/MelissaAbider/Corrosion_prediction",
+    "featured": true
+  },
+  {
+    "title": "Electronic Medical Records Manager",
+    "year": "2025",
+    "tag": "PHP - MySQL - CRUD",
+    "problem": "Manage patient medical records through a simple web interface.",
+    "built": "PHP/MySQL app with forms, listing, filtering and statistics over stored records.",
+    "impact": "CRUD application to create, view, delete, filter records and display patient statistics.",
+    "url": "https://github.com/MelissaAbider/Gestion_dossiers_medicaux",
+    "featured": false
+  },
+  {
+    "title": "Product Management App",
+    "year": "2025",
+    "tag": "PHP - MySQL - Inventory",
+    "problem": "Manage a product catalog with authenticated editing and public browsing.",
+    "built": "Product creation, category filtering, stock total calculation and discount features with PHP/MySQL.",
+    "impact": "Inventory app covering product workflows and business calculations.",
+    "url": "https://github.com/MelissaAbider/Gestion_produits",
+    "featured": false
+  },
+  {
+    "title": "Portfolio Website",
+    "year": "2025",
+    "tag": "HTML - CSS - JavaScript",
+    "problem": "Present my profile, experience, skills and projects in one accessible place.",
+    "built": "Static responsive website with structured sections, project cards and recruiter-friendly content.",
+    "impact": "Portfolio website optimized for desktop and mobile reading.",
+    "url": "https://github.com/MelissaAbider/portfolio",
+    "featured": false
+  },
+  {
+    "title": "Fast Food Management App",
+    "year": "2025",
+    "tag": "Java - MVC - JUnit",
+    "problem": "Model a complete fast-food ordering workflow.",
+    "built": "Team project with UML, Gantt/PERT planning, MVC architecture, Java interfaces and unit testing.",
+    "impact": "Application covering account creation, authentication, order, payment and invoice generation.",
+    "url": "https://github.com/MelissaAbider/Fast_food",
+    "featured": false
+  },
+  {
+    "title": "The Mind Terminal Game",
+    "year": "2025",
+    "tag": "Shell - Game Logic - AI Bot",
+    "problem": "Create a terminal version of the cooperative card game with human and robot players.",
+    "built": "Shell scripts coordinate processes, card distribution, rules, statistics and robot decisions.",
+    "impact": "Interactive terminal game with decision-tree robot behavior and automatic performance statistics.",
+    "url": "https://github.com/MelissaAbider/The_mind",
+    "featured": false
+  },
+  {
+    "title": "Fast Fourier Transform Algorithm",
+    "year": "2024",
+    "tag": "MATLAB - FFT - Algorithms",
+    "problem": "Explore a core signal-processing algorithm and its computational behavior.",
+    "built": "Implemented and experimented with the Fast Fourier Transform in MATLAB.",
+    "impact": "Algorithmic project focused on numerical computing and frequency-domain analysis foundations.",
+    "url": "https://github.com/MelissaAbider/Algo_Fourrier_Rapide",
+    "featured": false
+  },
+  {
+    "title": "Integrated Gene-Disease Interaction Analysis",
+    "year": "2024",
+    "tag": "Python - BioNLP - RAG",
+    "problem": "Analyze relationships between selected genes and diseases using scientific sources.",
+    "built": "Retrieve data from Open Targets and Europe PMC, extract passages, cluster text and generate RAG summaries.",
+    "impact": "CLI analysis workflow producing JSON/CSV outputs, clusters and concise interaction summaries.",
+    "url": "https://github.com/MelissaAbider/Integrated_Gene-Disease_Interaction_Analysis",
+    "featured": true
+  },
+  {
+    "title": "WebRAG",
+    "year": "2024",
+    "tag": "Python - FastAPI - Chroma - Docker",
+    "problem": "Let users ask questions, receive contextual answers and provide feedback.",
+    "built": "Combined FastAPI, SQLite, Chroma vector search, local LLM deployment with Ollama/Mistral and Docker Compose.",
+    "impact": "Web RAG application with answer generation, feedback collection and stored interaction history.",
+    "url": "https://github.com/MelissaAbider/WebRAG",
+    "featured": true
+  },
+  {
+    "title": "Tennis Game",
+    "year": "2024",
+    "tag": "Web - Three.js - 3D",
+    "problem": "Create an interactive web experience simulating a tennis match.",
+    "built": "Used web technologies and Three.js concepts to represent a 3D scene with players and ball movement.",
+    "impact": "3D game prototype demonstrating interactive front-end and visual programming skills.",
+    "url": "https://github.com/MelissaAbider/Jeu_tenis",
+    "featured": false
+  },
+  {
+    "title": "Maze Game",
+    "year": "2024",
+    "tag": "Java - Console Game",
+    "problem": "Build a playable maze where a user navigates obstacles and reaches the exit.",
+    "built": "Implemented console game logic, maze configuration and player movement in Java.",
+    "impact": "Java game focused on control flow, state management and gameplay rules.",
+    "url": "https://github.com/MelissaAbider/Labyrinthe",
+    "featured": false
+  },
+  {
+    "title": "Lottery Game",
+    "year": "2024",
+    "tag": "Java - Desktop UI - Random Logic",
+    "problem": "Create an interactive lottery game with player profiles and generated game cards.",
+    "built": "Developed a Java desktop project with profile creation, prize lists and random game generation.",
+    "impact": "Desktop game strengthening UI design, random logic and software structure.",
+    "url": "https://github.com/MelissaAbider/Jeu_Loto",
+    "featured": false
+  },
+  {
+    "title": "First-Year Web Development Project",
+    "year": "2024",
+    "tag": "HTML - CSS - JavaScript",
+    "problem": "Practice advanced web programming fundamentals through an interactive website.",
+    "built": "Built dynamic forms, Canvas-based 2D elements and JavaScript interactions.",
+    "impact": "Front-end project consolidating HTML, CSS, JavaScript, Canvas and user interaction basics.",
+    "url": "https://github.com/MelissaAbider/projet_dev_web_L1-",
+    "featured": false
+  },
+  {
+    "title": "AutoSaver",
+    "year": "2024",
+    "tag": "Java - Client Server - Backup",
+    "problem": "Automatically back up user-selected directories with configurable frequency and stored versions.",
+    "built": "Designed a client-server system handling authentication, backup configuration, storage spaces and archived file versions.",
+    "impact": "Java backup application demonstrating network programming, persistence and file-management workflows.",
+    "url": "https://github.com/MelissaAbider/AutoSaver",
+    "featured": false
+  }
+]

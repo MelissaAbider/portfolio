@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Private mobile assistant for updating Melissa Abider's portfolio projects.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" type="image/x-icon">
+    <title>Portfolio Assistant | Melissa Abider</title>
+</head>
+
+<body class="assistant-page assistant-locked">
+    <header class="site-header assistant-header" id="header">
+        <a class="brand" href="index.html#home" aria-label="Back to portfolio">
+            <span class="brand-mark">MA</span>
+            <span class="brand-text">Portfolio Assistant</span>
+        </a>
+        <nav class="nav-menu assistant-nav" aria-label="Assistant navigation">
+            <a href="index.html" class="nav-link">Portfolio</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+        </nav>
+    </header>
+
+    <main class="assistant-shell section">
+        <section class="assistant-hero reveal-up">
+            <p class="eyebrow">Private mobile updater</p>
+            <h1>Talk to your portfolio and publish a project update.</h1>
+            <p>Write a short message, check the generated project card, then commit it to the branch you choose.</p>
+        </section>
+
+
+        <section class="assistant-auth assistant-panel reveal-up" id="assistantAuth">
+            <div class="assistant-panel-heading">
+                <span class="assistant-step">Lock</span>
+                <h2>Private access</h2>
+            </div>
+            <p class="assistant-hint">Enter your GitHub token to unlock the assistant. Without a token with access to this repository, the update tools stay hidden.</p>
+            <label for="unlockToken">GitHub token</label>
+            <input id="unlockToken" type="password" autocomplete="off" placeholder="Fine-grained token with Contents: Read and write">
+            <div class="assistant-actions">
+                <button class="btn btn-primary" type="button" id="unlockAssistantBtn"><i class="uil uil-lock-open-alt"></i>Unlock assistant</button>
+            </div>
+        </section>
+        <section class="assistant-grid" id="assistantWorkspace" aria-label="Portfolio assistant controls" hidden>
+            <article class="assistant-panel reveal-up">
+                <div class="assistant-panel-heading">
+                    <span class="assistant-step">01</span>
+                    <h2>Message</h2>
+                </div>
+                <label for="assistantMessage">Tell the assistant what to add</label>
+                <textarea id="assistantMessage" rows="8" placeholder="Add project: Smart CV Matcher, 2026, Python - FastAPI - LLM. Problem: recruiters lose time matching CVs. Built: RAG pipeline, scoring API, dashboard. Impact: faster shortlist. URL: https://github.com/MelissaAbider/smart-cv-matcher"></textarea>
+                <div class="assistant-actions">
+                    <button class="btn btn-primary" type="button" id="draftProjectBtn"><i class="uil uil-message"></i>Draft card</button>
+                    <button class="btn btn-secondary" type="button" id="clearAssistantBtn"><i class="uil uil-trash-alt"></i>Clear</button>
+                </div>
+                <p class="assistant-hint">Tip: include title, year, technologies, problem, built, impact and GitHub URL.</p>
+            </article>
+
+            <article class="assistant-panel reveal-up">
+                <div class="assistant-panel-heading">
+                    <span class="assistant-step">02</span>
+                    <h2>Review</h2>
+                </div>
+                <div class="assistant-form-grid">
+                    <label>Title<input id="projectTitle" type="text" autocomplete="off"></label>
+                    <label>Year<input id="projectYear" type="text" inputmode="numeric" autocomplete="off"></label>
+                    <label>Tag<input id="projectTag" type="text" autocomplete="off"></label>
+                    <label>GitHub URL<input id="projectUrl" type="url" autocomplete="off"></label>
+                    <label class="assistant-wide">Problem<textarea id="projectProblem" rows="3"></textarea></label>
+                    <label class="assistant-wide">Built<textarea id="projectBuilt" rows="3"></textarea></label>
+                    <label class="assistant-wide">Impact<textarea id="projectImpact" rows="3"></textarea></label>
+                    <label class="assistant-checkbox"><input id="projectFeatured" type="checkbox"> Featured project</label>
+                </div>
+                <div class="assistant-actions">
+                    <button class="btn btn-primary" type="button" id="addProjectBtn"><i class="uil uil-plus"></i>Add to JSON</button>
+                    <button class="btn btn-secondary" type="button" id="copyJsonBtn"><i class="uil uil-copy"></i>Copy JSON</button>
+                </div>
+            </article>
+
+            <article class="assistant-panel reveal-up assistant-wide-panel">
+                <div class="assistant-panel-heading">
+                    <span class="assistant-step">03</span>
+                    <h2>Publish with GitHub</h2>
+                </div>
+                <div class="assistant-form-grid">
+                    <label>Repository owner<input id="repoOwner" type="text" value="MelissaAbider" autocomplete="off"></label>
+                    <label>Repository name<input id="repoName" type="text" value="portfolio" autocomplete="off"></label>
+                    <label>Branch<input id="repoBranch" type="text" value="main" autocomplete="off"></label>
+                    <label>GitHub token<input id="githubToken" type="password" autocomplete="off" placeholder="Fine-grained token with Contents: Read and write"></label>
+                </div>
+                <div class="assistant-actions">
+                    <button class="btn btn-primary" type="button" id="publishBtn"><i class="uil uil-cloud-upload"></i>Commit data/projects.json</button>
+                    <button class="btn btn-secondary" type="button" id="refreshProjectsBtn"><i class="uil uil-sync"></i>Reload current JSON</button>
+                </div>
+                <p class="assistant-hint">Your token stays in this browser session and is sent only to api.github.com.</p>
+            </article>
+
+            <article class="assistant-panel reveal-up assistant-wide-panel">
+                <div class="assistant-panel-heading">
+                    <span class="assistant-step">JSON</span>
+                    <h2>Current projects data</h2>
+                </div>
+                <pre class="assistant-json" id="jsonPreview" aria-live="polite">Loading data/projects.json...</pre>
+                <p class="assistant-status" id="assistantStatus" role="status"></p>
+            </article>
+        </section>
+    </main>
+
+    <script src="assets/assistant.js?v=private-access"></script>
+</body>
+
+</html>
