@@ -1,6 +1,7 @@
 const state = {
     projects: [],
-    sha: null
+    sha: null,
+    loaded: false
 };
 
 const fields = {
@@ -17,6 +18,9 @@ const fields = {
     repo: document.getElementById('repoName'),
     branch: document.getElementById('repoBranch'),
     token: document.getElementById('githubToken'),
+    unlockToken: document.getElementById('unlockToken'),
+    auth: document.getElementById('assistantAuth'),
+    workspace: document.getElementById('assistantWorkspace'),
     preview: document.getElementById('jsonPreview'),
     status: document.getElementById('assistantStatus'),
     authStatus: document.getElementById('authStatus')
@@ -28,12 +32,19 @@ const buttons = {
     add: document.getElementById('addProjectBtn'),
     copy: document.getElementById('copyJsonBtn'),
     publish: document.getElementById('publishBtn'),
-    refresh: document.getElementById('refreshProjectsBtn')
+    refresh: document.getElementById('refreshProjectsBtn'),
+    unlock: document.getElementById('unlockAssistantBtn')
 };
 
 function setStatus(message, type = 'info') {
-    fields.status.textContent = message;
-    fields.status.dataset.type = type;
+    if (fields.status) {
+        fields.status.textContent = message;
+        fields.status.dataset.type = type;
+    }
+    if (fields.authStatus) {
+        fields.authStatus.textContent = message;
+        fields.authStatus.dataset.type = type;
+    }
 }
 
 function normalizeText(value) {
@@ -41,7 +52,7 @@ function normalizeText(value) {
 }
 
 function matchValue(text, labels) {
-    const markers = 'title|titre|project|projet|add project|ajoute un projet|ajoute projet|year|annee|annÃƒÆ’Ã‚Â©e|tag|tools|technologies|tech|stack|problem|probleme|problÃƒÆ’Ã‚Â¨me|need|besoin|built|build|fait|realise|rÃƒÆ’Ã‚Â©alisÃƒÆ’Ã‚Â©|created|impact|result|rÃƒÆ’Ã‚Â©sultat|outcome|url|github';
+    const markers = 'title|titre|project|projet|add project|ajoute un projet|ajoute projet|year|annee|tag|tools|technologies|tech|stack|problem|probleme|need|besoin|built|build|fait|realise|created|impact|result|outcome|url|github';
 
     for (const label of labels) {
         const pattern = new RegExp(`${label}\\s*[:=-]\\s*([\\s\\S]*?)(?=\\s*[.;,]?\\s+(?:${markers})\\s*[:=-]|$)`, 'i');
@@ -103,9 +114,9 @@ function parseMessage() {
     fields.year.value = guessYear(text);
     fields.tag.value = guessTag(text);
     fields.url.value = guessUrl(text);
-    fields.problem.value = matchValue(text, ['problem', 'probleme', 'problÃƒÆ’Ã‚Â¨me', 'need', 'besoin']) || 'Describe the user or business problem this project solves.';
-    fields.built.value = matchValue(text, ['built', 'build', 'fait', 'realise', 'rÃƒÆ’Ã‚Â©alisÃƒÆ’Ã‚Â©', 'created']) || 'Describe the technical approach, tools and architecture.';
-    fields.impact.value = matchValue(text, ['impact', 'result', 'rÃƒÆ’Ã‚Â©sultat', 'outcome']) || 'Describe the result, value or measurable outcome.';
+    fields.problem.value = matchValue(text, ['problem', 'probleme', 'need', 'besoin']) || 'Describe the user or business problem this project solves.';
+    fields.built.value = matchValue(text, ['built', 'build', 'fait', 'realise', 'created']) || 'Describe the technical approach, tools and architecture.';
+    fields.impact.value = matchValue(text, ['impact', 'result', 'outcome']) || 'Describe the result, value or measurable outcome.';
     fields.featured.checked = /featured|important|hackathon|championship|award|ranked|winner|gagn/i.test(text);
 
     setStatus('Draft generated. Review the fields before adding it to JSON.', 'success');
@@ -139,8 +150,21 @@ function updatePreview() {
     fields.preview.textContent = JSON.stringify(state.projects, null, 2);
 }
 
-function addProject() {
+
+async function ensureProjectsLoaded() {
+    if (state.loaded && Array.isArray(state.projects)) {
+        return;
+    }
+
+    await loadLocalProjects();
+
+    if (!Array.isArray(state.projects)) {
+        state.projects = [];
+    }
+}
+async function addProject() {
     try {
+        await ensureProjectsLoaded();
         const project = readProjectForm();
         const existingIndex = state.projects.findIndex(item => item.title.toLowerCase() === project.title.toLowerCase());
 
@@ -176,6 +200,7 @@ async function loadLocalProjects() {
         }
         state.projects = await response.json();
         state.sha = null;
+        state.loaded = true;
         updatePreview();
         setStatus('Loaded data/projects.json from the site.', 'success');
     } catch (error) {
@@ -213,6 +238,7 @@ async function publishProjects() {
     try {
         buttons.publish.disabled = true;
         setStatus('Checking the current file on GitHub...', 'info');
+        await ensureProjectsLoaded();
 
         const file = await fetchGithubFile();
         const owner = normalizeText(fields.owner.value);
@@ -305,26 +331,42 @@ function clearForm() {
     setStatus('Form cleared.', 'info');
 }
 
-buttons.draft.addEventListener('click', parseMessage);
-buttons.clear.addEventListener('click', clearForm);
-buttons.add.addEventListener('click', addProject);
-buttons.copy.addEventListener('click', copyJson);
-buttons.publish.addEventListener('click', publishProjects);
-buttons.refresh.addEventListener('click', loadLocalProjects);
-buttons.unlock.addEventListener('click', validateAndUnlock);
+function onClick(button, handler) {
+    if (button) {
+        button.addEventListener('click', handler);
+    }
+}
 
-fields.workspace.hidden = true;
+onClick(buttons.draft, parseMessage);
+onClick(buttons.clear, clearForm);
+onClick(buttons.add, addProject);
+onClick(buttons.copy, copyJson);
+onClick(buttons.publish, publishProjects);
+onClick(buttons.refresh, loadLocalProjects);
+onClick(buttons.unlock, validateAndUnlock);
+
+if (fields.workspace) {
+    fields.workspace.hidden = true;
+}
+
 const savedToken = sessionStorage.getItem('portfolioAssistantToken');
-if (savedToken) {
+if (savedToken && fields.unlockToken && fields.token) {
     fields.unlockToken.value = savedToken;
     fields.token.value = savedToken;
 }
-fields.preview.textContent = 'Unlock the assistant to load portfolio data.';
+
+if (fields.preview) {
+    fields.preview.textContent = 'Unlock the assistant to load portfolio data.';
+}
 setStatus('Assistant locked. GitHub access is required.', 'info');
 
-fields.token.addEventListener('change', () => {
-    fields.unlockToken.value = fields.token.value;
-    sessionStorage.setItem('portfolioAssistantToken', fields.token.value);
-});
+if (fields.token) {
+    fields.token.addEventListener('change', () => {
+        if (fields.unlockToken) {
+            fields.unlockToken.value = fields.token.value;
+        }
+        sessionStorage.setItem('portfolioAssistantToken', fields.token.value);
+    });
+}
 
 
